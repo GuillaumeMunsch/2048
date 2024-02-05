@@ -1,7 +1,7 @@
 import { computeNewMapFromInput } from "./computeNewMapFromInput";
 
 describe("Should test computeNewMapFromInput", () => {
-  it("For the ⬇", () => {
+  it("For the ➡", () => {
     // GIVEN
     const map = [
       [2, 0, 0, 0],
@@ -23,7 +23,7 @@ describe("Should test computeNewMapFromInput", () => {
     expect(newMap).toEqual(expectedNewMap);
   });
 
-  it("For the ⬇ additions", () => {
+  it("For the ➡ additions", () => {
     // GIVEN
     const map = [
       [0, 0, 2, 2],
@@ -45,7 +45,7 @@ describe("Should test computeNewMapFromInput", () => {
     expect(newMap).toEqual(expectedNewMap);
   });
 
-  it("For the ⬇ additions", () => {
+  it("For the ➡ additions", () => {
     // GIVEN
     const map = [
       [0, 0, 2, 2],
@@ -63,6 +63,28 @@ describe("Should test computeNewMapFromInput", () => {
       [0, 0, 0, 4],
       [0, 0, 4, 4],
       [0, 0, 8, 8],
+    ];
+    expect(newMap).toEqual(expectedNewMap);
+  });
+
+  it("For the ⬅ additions", () => {
+    // GIVEN
+    const map = [
+      [0, 0, 2, 2],
+      [0, 2, 2, 0],
+      [0, 4, 2, 2],
+      [0, 4, 4, 8],
+    ];
+
+    // WHEN
+    const newMap = computeNewMapFromInput(map)("LEFT");
+
+    // THEN
+    const expectedNewMap = [
+      [4, 0, 0, 0],
+      [4, 0, 0, 0],
+      [4, 4, 0, 0],
+      [8, 8, 0, 0],
     ];
     expect(newMap).toEqual(expectedNewMap);
   });

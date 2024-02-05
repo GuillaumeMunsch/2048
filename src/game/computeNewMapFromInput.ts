@@ -30,5 +30,20 @@ export const computeNewMapFromInput =
         }
       }
     }
+    if (direction === "LEFT") {
+      for (let rowIndex = 3; rowIndex >= 0; rowIndex--) {
+        let newColIndex = 0;
+        for (let colIndex = 0; colIndex < map[rowIndex].length; colIndex++) {
+          const elem = map[rowIndex][colIndex];
+          if (elem === 0) continue;
+          else if (colIndex >= 0 && elem === map[rowIndex][colIndex + 1]) {
+            newMap[rowIndex][newColIndex++] = elem * 2;
+            colIndex += 1;
+          } else if (elem !== 0) {
+            newMap[rowIndex][newColIndex++] = elem;
+          }
+        }
+      }
+    }
     return newMap;
   };
