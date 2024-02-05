@@ -3,7 +3,7 @@ import findEmptyCoordinates from "./findEmptyCoordinates";
 
 type TileValue = 0 | 2 | 4 | 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1028 | 2048;
 
-type Direction = "UP" | "DOWN" | "RIGHT" | "LEFT";
+export type Direction = "UP" | "DOWN" | "RIGHT" | "LEFT";
 
 type Coord = {
   x: number;
@@ -41,9 +41,5 @@ export class Game {
       ];
 
     this.map[x][y] = getRandomNumberWithinRange(1, 2) * 2;
-  };
-
-  playRound = (direction: Direction) => {
-    console.log("Direction", direction);
   };
 }
