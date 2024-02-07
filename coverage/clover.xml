@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707210266525" clover="3.2.0">
-  <project timestamp="1707210266525" name="All files">
-    <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2" elements="20" coveredelements="20" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+<coverage generated="1707311398389" clover="3.2.0">
+  <project timestamp="1707311398389" name="All files">
+    <metrics statements="51" coveredstatements="51" conditionals="14" coveredconditionals="12" methods="9" coveredmethods="9" elements="74" coveredelements="72" complexity="0" loc="51" ncloc="51" packages="1" files="3" classes="3"/>
     <file name="computeLine.ts" path="/Users/guillaumemunsch/Projects/2048/src/game/computeLine.ts">
-      <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
-      <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="2" count="22" type="stmt"/>
-      <line num="4" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="6" count="4" type="stmt"/>
-      <line num="8" count="4" type="stmt"/>
-      <line num="9" count="12" type="cond" truecount="2" falsecount="0"/>
-      <line num="10" count="5" type="stmt"/>
-      <line num="11" count="5" type="stmt"/>
-      <line num="13" count="7" type="stmt"/>
-      <line num="16" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="19" count="1" type="stmt"/>
+      <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="7" methods="2" coveredmethods="2"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="4" count="27" type="cond" truecount="0" falsecount="1"/>
+      <line num="5" count="108" type="stmt"/>
+      <line num="7" count="27" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="27" type="stmt"/>
+      <line num="11" count="27" type="stmt"/>
+      <line num="12" count="33" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="18" type="stmt"/>
+      <line num="14" count="18" type="stmt"/>
+      <line num="16" count="15" type="stmt"/>
+      <line num="19" count="27" type="stmt"/>
+      <line num="20" count="75" type="stmt"/>
+      <line num="22" count="27" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="2" type="stmt"/>
+    </file>
+    <file name="computeNewMapFromInput.ts" path="/Users/guillaumemunsch/Projects/2048/src/game/computeNewMapFromInput.ts">
+      <metrics statements="22" coveredstatements="22" conditionals="6" coveredconditionals="5" methods="4" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="7" count="24" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="6" type="stmt"/>
+      <line num="13" count="6" type="cond" truecount="0" falsecount="1"/>
+      <line num="15" count="6" type="stmt"/>
+      <line num="22" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="4" type="stmt"/>
+      <line num="24" count="16" type="stmt"/>
+      <line num="26" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="28" count="8" type="stmt"/>
+      <line num="29" count="8" type="stmt"/>
+      <line num="30" count="32" type="stmt"/>
+      <line num="31" count="32" type="stmt"/>
+      <line num="33" count="8" type="stmt"/>
+      <line num="34" count="8" type="stmt"/>
+      <line num="35" count="32" type="stmt"/>
+      <line num="39" count="6" type="stmt"/>
+    </file>
+    <file name="game.ts" path="/Users/guillaumemunsch/Projects/2048/src/game/game.ts">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="1" count="3" type="stmt"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="38" count="2" type="stmt"/>
+      <line num="39" count="4" type="stmt"/>
+      <line num="41" count="4" type="stmt"/>
+      <line num="45" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>

@@ -1,7 +1,11 @@
-import { Direction } from "./game";
+import computeLine from "./computeLine";
+import { Direction, GAME_SIDE_SIZE } from "./game";
 
 const isMapCorrectSize = (map: number[][]) => {
-  return map.length === 4 && map.every((row) => row.length === 4);
+  return (
+    map.length === GAME_SIDE_SIZE &&
+    map.every((row) => row.length === GAME_SIDE_SIZE)
+  );
 };
 
 export const computeNewMapFromInput =
@@ -15,59 +19,20 @@ export const computeNewMapFromInput =
       [0, 0, 0, 0],
     ];
 
-    if (direction === "RIGHT") {
+    if (["RIGHT", "LEFT"].includes(direction)) {
       for (let rowIndex = 0; rowIndex < map.length; rowIndex++) {
-        // let newColIndex = 3;
-        for (let colIndex = 3; colIndex >= 0; colIndex--) {
-          const elem = map[rowIndex][colIndex];
-          if (elem !== 0) {
-            // let nextElemColIndex = 2;
-            // while (nextElemColIndex >= 0) {
-            //   if (map[rowIndex][nextElemColIndex] )
-            // }
-          }
-          // if (elem === 0) continue;
-          // else if (colIndex >= 0 && elem === map[rowIndex][colIndex - 1]) {
-          //   for (let index = 0; index < array.length; index++) {
-          //     const element = array[index];
-
-          //   }
-          //   newMap[rowIndex][newColIndex--] = elem * 2;
-          //   colIndex -= 1;
-          // } else if (elem !== 0) {
-          //   newMap[rowIndex][newColIndex--] = elem;
-          // }
-        }
+        newMap[rowIndex] = computeLine(map[rowIndex], direction === "RIGHT");
       }
-    }
-    if (direction === "LEFT") {
-      for (let rowIndex = 3; rowIndex >= 0; rowIndex--) {
-        let newColIndex = 0;
+    } else if (["UP", "DOWN"].includes(direction)) {
+      for (let rowIndex = 0; rowIndex < map.length; rowIndex++) {
+        const column: number[] = [];
         for (let colIndex = 0; colIndex < map[rowIndex].length; colIndex++) {
-          const elem = map[rowIndex][colIndex];
-          if (elem === 0) continue;
-          else if (colIndex >= 0 && elem === map[rowIndex][colIndex + 1]) {
-            newMap[rowIndex][newColIndex++] = elem * 2;
-            colIndex += 1;
-          } else if (elem !== 0) {
-            newMap[rowIndex][newColIndex++] = elem;
-          }
+          const element = map[colIndex][rowIndex];
+          column.push(element);
         }
-      }
-    }
-
-    if (direction === "UP") {
-      for (let colIndex = 0; colIndex < map.length; colIndex++) {
-        let newRowIndex = 0;
-        for (let rowIndex = 3; rowIndex >= 0; rowIndex--) {
-          const elem = map[rowIndex][colIndex];
-          if (elem === 0) continue;
-          else if (colIndex >= 0 && elem === map[rowIndex][colIndex + 1]) {
-            newMap[newRowIndex++][colIndex] = elem * 2;
-            rowIndex += 1;
-          } else if (elem !== 0) {
-            newMap[newRowIndex++][colIndex] = elem;
-          }
+        const newColumn = computeLine(column, direction === "DOWN");
+        for (let colIndex = 0; colIndex < map[rowIndex].length; colIndex++) {
+          newMap[colIndex][rowIndex] = newColumn[colIndex];
         }
       }
     }

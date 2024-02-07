@@ -1,6 +1,8 @@
 import getRandomNumberWithinRange from "../utils/generateRandomNumber";
 import findEmptyCoordinates from "./findEmptyCoordinates";
 
+export const GAME_SIDE_SIZE = 4;
+
 type TileValue = 0 | 2 | 4 | 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1028 | 2048;
 
 export type Direction = "UP" | "DOWN" | "RIGHT" | "LEFT";

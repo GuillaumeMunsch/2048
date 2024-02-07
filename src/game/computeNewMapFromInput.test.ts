@@ -1,7 +1,7 @@
 import { computeNewMapFromInput } from "./computeNewMapFromInput";
 
-describe.skip("Should test computeNewMapFromInput", () => {
-  it.only("For the ➡", () => {
+describe.only("Should test computeNewMapFromInput", () => {
+  it("For the ➡", () => {
     // GIVEN
     const map = [
       [2, 0, 0, 0],
@@ -89,13 +89,13 @@ describe.skip("Should test computeNewMapFromInput", () => {
     expect(newMap).toEqual(expectedNewMap);
   });
 
-  it.skip("For the ⬆ additions", () => {
+  it("For the ⬆ additions", () => {
     // GIVEN
     const map = [
-      [2, 0, 2, 2],
-      [2, 2, 2, 0],
-      [0, 4, 2, 2],
-      [0, 4, 4, 8],
+      [4, 0, 2, 0],
+      [4, 0, 0, 2],
+      [0, 0, 0, 0],
+      [2, 0, 0, 0],
     ];
 
     // WHEN
@@ -103,10 +103,32 @@ describe.skip("Should test computeNewMapFromInput", () => {
 
     // THEN
     const expectedNewMap = [
+      [8, 0, 2, 2],
+      [2, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+    ];
+    expect(newMap).toEqual(expectedNewMap);
+  });
+
+  it("For the ⬇ additions", () => {
+    // GIVEN
+    const map = [
+      [4, 0, 2, 0],
+      [4, 2, 0, 2],
+      [2, 0, 2, 2],
+      [2, 0, 0, 0],
+    ];
+
+    // WHEN
+    const newMap = computeNewMapFromInput(map)("DOWN");
+
+    // THEN
+    const expectedNewMap = [
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [8, 0, 0, 0],
       [4, 2, 4, 4],
-      [0, 8, 2, 8],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
     ];
     expect(newMap).toEqual(expectedNewMap);
   });
