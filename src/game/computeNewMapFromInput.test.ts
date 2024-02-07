@@ -1,9 +1,10 @@
 import { computeNewMapFromInput } from "./computeNewMapFromInput";
+import { Map } from "./game";
 
 describe("Should test computeNewMapFromInput", () => {
   it("For the ➡", () => {
     // GIVEN
-    const map = [
+    const map: Map = [
       [2, 0, 0, 0],
       [0, 0, 2, 0],
       [0, 2, 0, 2],
@@ -25,7 +26,7 @@ describe("Should test computeNewMapFromInput", () => {
 
   it("For the ➡ additions", () => {
     // GIVEN
-    const map = [
+    const map: Map = [
       [0, 0, 2, 2],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
@@ -47,7 +48,7 @@ describe("Should test computeNewMapFromInput", () => {
 
   it("For the ➡ additions", () => {
     // GIVEN
-    const map = [
+    const map: Map = [
       [0, 0, 2, 2],
       [0, 2, 2, 0],
       [0, 4, 2, 2],
@@ -69,7 +70,7 @@ describe("Should test computeNewMapFromInput", () => {
 
   it("For the ⬅ additions", () => {
     // GIVEN
-    const map = [
+    const map: Map = [
       [0, 0, 2, 2],
       [0, 2, 2, 0],
       [0, 4, 2, 2],
@@ -91,7 +92,7 @@ describe("Should test computeNewMapFromInput", () => {
 
   it("For the ⬆ additions", () => {
     // GIVEN
-    const map = [
+    const map: Map = [
       [4, 0, 2, 0],
       [4, 0, 0, 2],
       [0, 0, 0, 0],
@@ -113,7 +114,7 @@ describe("Should test computeNewMapFromInput", () => {
 
   it("For the ⬇ additions", () => {
     // GIVEN
-    const map = [
+    const map: Map = [
       [4, 0, 2, 0],
       [4, 2, 0, 2],
       [2, 0, 2, 2],

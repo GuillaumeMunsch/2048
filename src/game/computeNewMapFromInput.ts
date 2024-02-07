@@ -1,5 +1,5 @@
 import computeLine from "./computeLine";
-import { Direction, GAME_SIDE_SIZE } from "./game";
+import { CellValue, Direction, GAME_SIDE_SIZE } from "./game";
 
 const isMapCorrectSize = (map: number[][]) => {
   return (
@@ -9,10 +9,10 @@ const isMapCorrectSize = (map: number[][]) => {
 };
 
 export const computeNewMapFromInput =
-  (map: number[][]) => (direction: Direction) => {
+  (map: CellValue[][]) => (direction: Direction) => {
     if (!isMapCorrectSize(map)) throw new Error("Map size incorrect");
 
-    const newMap = [
+    const newMap: CellValue[][] = [
       [0, 0, 0, 0],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
@@ -25,7 +25,7 @@ export const computeNewMapFromInput =
       }
     } else if (["UP", "DOWN"].includes(direction)) {
       for (let rowIndex = 0; rowIndex < map.length; rowIndex++) {
-        const column: number[] = [];
+        const column: CellValue[] = [];
         for (let colIndex = 0; colIndex < map[rowIndex].length; colIndex++) {
           const element = map[colIndex][rowIndex];
           column.push(element);

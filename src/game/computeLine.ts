@@ -1,16 +1,16 @@
-import { GAME_SIDE_SIZE } from "./game";
+import { CellValue, GAME_SIDE_SIZE } from "./game";
 
-const computeLine = (line: number[], isReverse = false) => {
+const computeLine = (line: CellValue[], isReverse = false) => {
   if (line.length !== GAME_SIDE_SIZE) throw new Error("Incorrect line size");
   const epuredLine = line.slice().filter((elem) => elem !== 0);
 
   const correctDirectionLine = isReverse ? epuredLine.reverse() : epuredLine;
 
-  const computedLine: number[] = [];
+  const computedLine: CellValue[] = [];
 
   for (let i = 0; i < correctDirectionLine.length; i++) {
     if (correctDirectionLine[i] === correctDirectionLine[i + 1]) {
-      computedLine.push(correctDirectionLine[i] * 2);
+      computedLine.push((correctDirectionLine[i] * 2) as CellValue);
       i++;
     } else {
       computedLine.push(correctDirectionLine[i]);

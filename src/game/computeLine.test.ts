@@ -1,9 +1,10 @@
 import computeLine from "./computeLine";
+import { CellValue } from "./game";
 
 describe("Compute line", () => {
   it("Should compute the line", () => {
     // GIVEN
-    const arr = [2, 0, 2, 2];
+    const arr: CellValue[] = [2, 0, 2, 2];
 
     // WHEN
     const computedLine = computeLine(arr);
@@ -14,7 +15,7 @@ describe("Compute line", () => {
 
   it("Should compute the line", () => {
     // GIVEN
-    const arr = [4, 0, 4, 2];
+    const arr: CellValue[] = [4, 0, 4, 2];
 
     // WHEN
     const computedLine = computeLine(arr);
@@ -25,7 +26,7 @@ describe("Compute line", () => {
 
   it("Should compute the reverse line", () => {
     // GIVEN
-    const arr = [0, 2, 4, 4];
+    const arr: CellValue[] = [0, 2, 4, 4];
 
     // WHEN
     const computedLine = computeLine(arr, true);
