@@ -1,6 +1,6 @@
 import { computeNewMapFromInput } from "./computeNewMapFromInput";
 
-describe.only("Should test computeNewMapFromInput", () => {
+describe("Should test computeNewMapFromInput", () => {
   it("For the ➡", () => {
     // GIVEN
     const map = [
