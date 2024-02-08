@@ -34,4 +34,15 @@ describe("Compute line", () => {
     // THEN
     expect(computedLine).toEqual([0, 0, 2, 8]);
   });
+
+  it("Debug test", () => {
+    // GIVEN
+    const arr: CellValue[] = [2, 4, 0, 4];
+
+    // WHEN
+    const computedLine = computeLine(arr);
+
+    // THEN
+    expect(computedLine).toEqual([2, 8, 0, 0]);
+  });
 });
